@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-from random import randrange as rand
-
+from random import random as rand
+from random import randrange as randi
 import math
 
 data = []
@@ -13,25 +13,25 @@ data.append([-1.0, 1.1]) ;labels.append(-1)
 data.append([2.1, -3]); labels.append(1)
 
 ## initial parameters
-a2 = 1
-b2 = -2
-c2 = -1
-a1 = 1
-b1 = -2
-c1 = -1
-a3 = 1
-b3= -2
-c3 = -1
-a4 = 1
-b4= -2
-c4 = -1
+a2 = rand()-.5
+b2 = rand()-.5
+c2 = rand()-.5
+a1 = rand()-.5
+b1 = rand()-.5
+c1 = rand()-.5
+a3 = rand()-.5
+b3= -rand()-.5
+c3 = rand()-.5
+a4 = rand()-.5
+b4= -rand()-.5
+c4 = rand()-.5
 d4=2
 num_correct=0
 for j in range(0,200): # optimal net# random initial parameters
 # a1 = Math.random() - 0.5; # a random number between -0.5 and 0.5
 # ... similarly initialize all other parameters to randoms
   # pick a random data point
-  i = rand(len(data))
+  i = randi(len(data))
 
   x = data[i][0];
   y = data[i][1];
@@ -58,9 +58,8 @@ for j in range(0,200): # optimal net# random initial parameters
 
   if(pull==0.0) :
       num_correct=num_correct+1
-  # if(j % 5 == 0) : # every 10 iterations...
-  if(j % 25 == 0) : # every 10 iterations...
-    accuracy = num_correct*1. / 25 #(j+1)# len(data)
+  if(j % 20 == 0) : # every n iterations...
+    accuracy = num_correct*1. / 20 #(j+1)# len(data)
     num_correct=0
     print('training accuracy at iter ' + str(j) + ': ' + str(accuracy))
     # if(accuracy==1.0):exit()
@@ -105,9 +104,10 @@ for j in range(0,200): # optimal net# random initial parameters
 
   # add the pulls from the regularization, tugging all multiplicative
   # parameters (i.e. not the biases) downward, proportional to their value
-  da1 += -a1; da2 += -a2; da3 += -a3;
-  db1 += -b1; db2 += -b2; db3 += -b3;
-  da4 += -a4; db4 += -b4; dc4 += -c4;
+  # TODO : DOESN'T WORK
+  # da1 += -a1; da2 += -a2; da3 += -a3;
+  # db1 += -b1; db2 += -b2; db3 += -b3;
+  # da4 += -a4; db4 += -b4; dc4 += -c4;
 
   # finally, do the parameter update
   step_size = 0.01;

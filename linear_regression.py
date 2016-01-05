@@ -49,9 +49,8 @@ for j in range(0,200): # optimal net
   c += step_size * (1 * pull);
 
 
-  # if(j % 5 == 0) : # every 10 iterations...
-  if(j % 25 == 0) : # every 10 iterations...
-    accuracy = num_correct*1. / 25 #(j+1)# len(data)
+  if(j % 25 == 0) : # every 25 iterations...
+    accuracy = num_correct*1. / 25
     num_correct=0
     print('training accuracy at iter ' + str(j) + ': ' + str(accuracy))
     # if(accuracy==1.0):exit()

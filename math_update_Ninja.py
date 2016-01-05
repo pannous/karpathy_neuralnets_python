@@ -15,8 +15,8 @@ a = 1
 b = -2
 c = -1
 num_correct=0
-# for j in range(0,2000):
-for j in range(0,2000): # optimal net
+# for j in range(0,400):
+for j in range(0,200): # optimal net
   # // pick a random data point
   i = rand(len(data))
   x = data[i][0];
@@ -30,10 +30,10 @@ for j in range(0,2000): # optimal net
 
   pull = 0.0;
   # squared hinge loss SVM
-  # if(label ==  1 and score <  0): pull = error2
-  # if(label == -1 and score >  0) : pull = -error2
-  if(label ==  1 and score <  1): pull = error2
-  if(label == -1 and score > -1) : pull = -error2
+  if(label ==  1 and score <  0): pull = error2
+  if(label == -1 and score >  0) : pull = -error2
+  # if(label ==  1 and score <  1): pull = error2
+  # if(label == -1 and score > -1) : pull = -error2
   # if(label ==  1 and score <  .02): pull =  1;
   # if(label == -1 and score > -.02): pull = -1;
 

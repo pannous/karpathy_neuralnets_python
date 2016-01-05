@@ -8,7 +8,7 @@ sess = tf.InteractiveSession()
 # x=  -2, y = 3;
 x = tf.Variable(-2., name="x")
 y = tf.Variable( 3., name="y")
-z = tf.Variable( 4., name="y")
+z = tf.Variable( 4., name="z")
 
 def f(x, y):
   return x * y
@@ -50,7 +50,6 @@ for a,b in zip([x_derivative,y_derivative,z_derivative],[x_gradient,y_gradient,z
 x = x + x_gradient * step_size
 y = y + y_gradient * step_size
 z = z + z_gradient * step_size
-
 
 
 out_new = sess.run(deepGate(x, y,z))  # -1.86 Higher output than 2! Nice.
