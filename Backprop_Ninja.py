@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import math
 
-
 #every Unit corresponds to a wire in the diagrams
 class Unit:
   def __init__(self,value, grad) :
@@ -29,7 +28,7 @@ class multiplyGate:
   
 
 class addGate:
-# addGate(self):
+
   def forward(self,u0, u1) :
     self.u0 = u0;
     self.u1 = u1; #store pointers to input units
@@ -201,13 +200,13 @@ def evalTrainingAccuracy() :
 
 from random import randrange as rand
 # the learning loop
-for j in range(0,40000):
+for j in range(0,4000):
   # pick a random data point
   i = rand(len(data))
   x = Unit(data[i][0], 0.0)
   y = Unit(data[i][1], 0.0)
   label = labels[i]
-  svm.learnFrom(x, y, label)
+  svm.learnFrom(x, y, label) # todo: It converges but there seems to be a small bug
 
   if(j % 25 == 0) : # every 10 iterations...
     accuracy = evalTrainingAccuracy()

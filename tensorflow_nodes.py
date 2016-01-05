@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# https://karpathy.github.io/neuralnets/
+
 import math
 
 from tensorflow.python.ops.math_ops import sigmoid

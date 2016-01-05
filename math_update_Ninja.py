@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# https://karpathy.github.io/neuralnets/
+
 from random import randrange as rand
 
 data = []

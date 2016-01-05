@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# https://karpathy.github.io/neuralnets/
+
 from random import random as rand
 from random import randrange as randi
 import math

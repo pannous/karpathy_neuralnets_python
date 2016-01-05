@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 #!/usr/bin/env PYTHONIOENCODING="utf-8" python
 # https://karpathy.github.io/neuralnets/
+
 import tensorflow as tf
 
 sess = tf.InteractiveSession()
